@@ -1,0 +1,47 @@
+setup source code:
+
+Step1: Cerate project github
+
+Step2: Create ssh : 
+Mở Git Bash (nếu bạn chưa cài đặt, bạn có thể tải Git for Windows tại đây).
+
+Bước  1:Tạo SSH key bằng cách chạy lệnh sau trong Git Bash:
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+Bước 2: Thêm SSH Key vào ssh-agent
+Khởi động ssh-agent bằng cách chạy lệnh sau trong Git Bash:
+eval "$(ssh-agent -s)"
+Thêm SSH key của bạn vào ssh-agent:
+ssh-add ~/.ssh/id_rsa
+Thay thế ~/.ssh/id_rsa bằng đường dẫn đến file SSH key của bạn nếu bạn đã sử dụng đường dẫn tùy chỉnh.
+
+Bước 3: Thêm SSH Key vào GitHub
+Sao chép SSH Public Key vào clipboard bằng cách chạy lệnh sau trong Git Bash:
+cat ~/.ssh/id_rsa.pub
+Sao chép toàn bộ nội dung của key hiện ra.
+
+Đăng nhập vào tài khoản GitHub của bạn.
+
+Đi đến Settings: Nhấp vào biểu tượng hồ sơ ở góc trên bên phải và chọn Settings.
+
+SSH and GPG keys: Ở menu bên trái, chọn SSH and GPG keys.
+
+New SSH key: Nhấp vào nút New SSH key.
+
+Dán SSH Key: Trong phần "Title", bạn có thể đặt tên cho key (ví dụ: "My Laptop SSH Key"). Trong phần "Key", dán nội dung của file id_rsa.pub mà bạn đã sao chép.
+
+Add SSH key: Nhấp vào Add SSH key để lưu key.
+
+Bước 4: Kiểm tra kết nối
+Mở Git Bash và kiểm tra kết nối đến GitHub:
+ssh -T git@github.com
+
+
+
+Step 3: Open dockerhub , tao token => Connect vs setting->Secrets -> DOKERHUB_USER, DOKERHUB_TOKEN
+
+Step 4: Create requirements.txt
+
+Step 5: Create dockerfile, .dockerignore , => run docker build .
+
+Step 6: docker-compose build
