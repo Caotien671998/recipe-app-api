@@ -45,3 +45,8 @@ Step 4: Create requirements.txt
 Step 5: Create dockerfile, .dockerignore , => run docker build .
 
 Step 6: docker-compose build
+
+Step7: docker-compose run --rm app sh -c "flake8"
+
+Step 8: Create App:  docker-compose run --rm app sh -c "django-admin startproject app ."
+Step9: Run app: docker-compose up
